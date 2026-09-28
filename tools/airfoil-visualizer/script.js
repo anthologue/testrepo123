@@ -121,4 +121,11 @@ form.addEventListener("submit", (e) => {
   plotFromInput();
 });
 
+// Re-plot on theme change so the stroke/fill pick up the new accent color.
+document.addEventListener("toollab-theme-change", () => {
+  if (isValidNacaCode(input.value.trim())) {
+    plotFromInput();
+  }
+});
+
 plotFromInput();
