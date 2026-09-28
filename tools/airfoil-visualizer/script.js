@@ -76,7 +76,11 @@ function drawAirfoil(canvas, code) {
     y: originY - pt.y * scale,
   });
 
-  ctx.strokeStyle = "#3355ee";
+  const accent = getComputedStyle(document.documentElement)
+    .getPropertyValue("--color-accent")
+    .trim();
+
+  ctx.strokeStyle = accent;
   ctx.lineWidth = 2;
   ctx.beginPath();
   upper.forEach((pt, i) => {
@@ -91,8 +95,10 @@ function drawAirfoil(canvas, code) {
   ctx.closePath();
   ctx.stroke();
 
-  ctx.fillStyle = "rgba(51, 85, 238, 0.12)";
+  ctx.globalAlpha = 0.12;
+  ctx.fillStyle = accent;
   ctx.fill();
+  ctx.globalAlpha = 1;
 }
 
 const form = document.getElementById("naca-form");

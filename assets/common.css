@@ -1,29 +1,30 @@
 :root {
-  --color-bg: #f7f7f8;
-  --color-surface: #ffffff;
-  --color-border: #e0e0e3;
-  --color-text: #1c1c1f;
-  --color-text-muted: #5a5a63;
-  --color-accent: #3355ee;
+  --color-bg: #ffffff;
+  --color-surface: #f4f4f7;
+  --color-border: #dcdce3;
+  --color-text: #0a0a0c;
+  --color-text-muted: #54545e;
+  --color-accent: #7c3aed;
   --color-accent-contrast: #ffffff;
-  --radius: 10px;
+  --radius: 4px;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2.5rem;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Space Grotesk", var(--font-sans);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #17181c;
-    --color-surface: #212227;
-    --color-border: #34353b;
-    --color-text: #ecedf0;
-    --color-text-muted: #a3a4ab;
-    --color-accent: #7d93ff;
-    --color-accent-contrast: #0e0e11;
+    --color-bg: #09090b;
+    --color-surface: #161618;
+    --color-border: #2a2a2f;
+    --color-text: #f5f5f7;
+    --color-text-muted: #a3a3ad;
+    --color-accent: #a78bfa;
+    --color-accent-contrast: #0a0a0c;
   }
 }
 
@@ -43,9 +44,17 @@ a {
   color: var(--color-accent);
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
 .site-header {
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-text);
+  background: var(--color-bg);
 }
 
 .site-header__inner {
@@ -60,8 +69,10 @@ a {
 }
 
 .site-title {
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--color-text);
 }
@@ -103,17 +114,16 @@ main {
 .card {
   display: block;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
   border-radius: var(--radius);
   padding: var(--space-2);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .card:hover,
 .card:focus-visible {
-  border-color: var(--color-accent);
   transform: translateY(-2px);
 }
 
@@ -146,7 +156,7 @@ input[type="text"],
 input[type="color"] {
   font: inherit;
   padding: 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-border);
   background: var(--color-bg);
   color: var(--color-text);
@@ -154,16 +164,17 @@ input[type="color"] {
 
 button {
   font: inherit;
+  font-weight: 700;
   cursor: pointer;
-  border: 1px solid var(--color-accent);
+  border: none;
   background: var(--color-accent);
   color: var(--color-accent-contrast);
-  border-radius: 6px;
+  border-radius: var(--radius);
   padding: 0.5rem 0.9rem;
 }
 
 button:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.1);
 }
 
 button:focus-visible,
