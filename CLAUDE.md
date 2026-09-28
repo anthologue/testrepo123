@@ -11,3 +11,8 @@ Guidance for Claude Code (and other contributors) working in this repository.
 - Write plain `.html`, `.css`, and `.js` files that run directly in the browser with no compile, bundle, or install step.
 - Avoid adding a `package.json`/`node_modules` dependency chain purely for tooling; if a dependency is unavoidable, prefer none at all over adding one.
 - Keep markup, styles, and scripts simple and directly runnable by opening the HTML file or serving it as static files.
+
+## Working conventions
+- Before implementing any non-trivial feature, ask clarifying
+  questions about scope, edge cases, and constraints first —
+  don't propose a plan until you've asked.
