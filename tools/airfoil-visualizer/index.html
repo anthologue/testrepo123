@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airfoil Visualizer &mdash; Tool Lab</title>
+  <link rel="stylesheet" href="../../assets/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-title" href="../../index.html">Tool Lab</a>
+      <p class="breadcrumb"><a href="../../index.html">&larr; All tools</a></p>
+    </div>
+  </header>
+
+  <main>
+    <h1>Airfoil Visualizer</h1>
+    <p>Enter a NACA 4-digit code to plot its shape. Shape only &mdash; no airflow simulation.</p>
+
+    <div class="tool-panel">
+      <form id="naca-form" novalidate>
+        <label for="naca-code">NACA 4-digit code</label>
+        <div class="code-row">
+          <input type="text" id="naca-code" value="2412" inputmode="numeric" maxlength="4" pattern="\d{4}" autocomplete="off">
+          <button type="submit">Plot</button>
+        </div>
+        <p id="naca-error" class="field-error" hidden>Enter exactly 4 digits, e.g. 2412.</p>
+      </form>
+
+      <canvas id="airfoil-canvas" width="800" height="300" aria-label="Airfoil shape plot"></canvas>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tool Lab &mdash; built with plain HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

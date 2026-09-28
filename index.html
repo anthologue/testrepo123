@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool Lab</title>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-title">Tool Lab</span>
+      <p class="site-tagline">A growing collection of small web tools and learning artifacts.</p>
+    </div>
+  </header>
+
+  <main>
+    <h1>Tools</h1>
+    <ul id="tool-list" class="card-grid" aria-label="Available tools"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tool Lab &mdash; built with plain HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="assets/tools-data.js"></script>
+  <script>
+    const list = document.getElementById("tool-list");
+    for (const tool of TOOLS) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.className = "card";
+      a.href = tool.path;
+      const h2 = document.createElement("h2");
+      h2.textContent = tool.name;
+      const p = document.createElement("p");
+      p.textContent = tool.description;
+      a.append(h2, p);
+      li.append(a);
+      list.append(li);
+    }
+  </script>
+</body>
+</html>

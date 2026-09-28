@@ -1,0 +1,21 @@
+.code-row {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+#naca-code {
+  width: 100px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+#airfoil-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}

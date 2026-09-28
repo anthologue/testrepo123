@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Picker &mdash; Tool Lab</title>
+  <link rel="stylesheet" href="../../assets/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-title" href="../../index.html">Tool Lab</a>
+      <p class="breadcrumb"><a href="../../index.html">&larr; All tools</a></p>
+    </div>
+  </header>
+
+  <main>
+    <h1>Color Picker</h1>
+    <p>Pick a color to see its HEX, RGB, and HSL values, and a generated palette.</p>
+
+    <div class="tool-panel">
+      <label for="color-input">Base color</label>
+      <input type="color" id="color-input" value="#3355ee">
+
+      <div class="value-grid">
+        <div class="value-row">
+          <label for="hex-value">HEX</label>
+          <div class="value-with-copy">
+            <input type="text" id="hex-value" readonly>
+            <button type="button" data-copy-target="hex-value">Copy</button>
+          </div>
+        </div>
+        <div class="value-row">
+          <label for="rgb-value">RGB</label>
+          <div class="value-with-copy">
+            <input type="text" id="rgb-value" readonly>
+            <button type="button" data-copy-target="rgb-value">Copy</button>
+          </div>
+        </div>
+        <div class="value-row">
+          <label for="hsl-value">HSL</label>
+          <div class="value-with-copy">
+            <input type="text" id="hsl-value" readonly>
+            <button type="button" data-copy-target="hsl-value">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Palette</h2>
+      <p class="palette-hint">Click a swatch to copy its HEX value.</p>
+      <ul id="palette" class="palette" aria-label="Generated palette"></ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tool Lab &mdash; built with plain HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
